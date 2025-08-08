@@ -26,4 +26,7 @@ from td_sync import sync_with_server
 sync_with_server()
 ```
 
+The function takes a single parameter for  `collection_name`. If no collection name is provided, the function will prompt to select an existing collection or create a new one. 
+
+
 
