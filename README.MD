@@ -2,7 +2,7 @@
 
 A helper function that **registers/updates your Tabsdata functions** when you run your tabsdata .py function file
 
-Drop `sync_with_server()` into any tabsdata function file. Every time your file runs, the function is registered or updated
+Drop `sync_with_server()` into the bottom of any tabsdata function file. Every time your file runs, the function is registered or updated
 
 ---
 
@@ -27,6 +27,7 @@ sync_with_server()
 ```
 
 The function takes a single parameter for  `collection_name`. If no collection name is provided, the function will prompt to select an existing collection or create a new one. 
+
 
 
 
