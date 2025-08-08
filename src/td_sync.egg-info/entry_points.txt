@@ -1,0 +1,2 @@
+[console_scripts]
+td-sync = td_sync.sync:main

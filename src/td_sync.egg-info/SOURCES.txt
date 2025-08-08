@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/td_sync/__init__.py
+src/td_sync/sync.py
+src/td_sync.egg-info/PKG-INFO
+src/td_sync.egg-info/SOURCES.txt
+src/td_sync.egg-info/dependency_links.txt
+src/td_sync.egg-info/entry_points.txt
+src/td_sync.egg-info/requires.txt
+src/td_sync.egg-info/top_level.txt
