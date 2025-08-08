@@ -58,7 +58,7 @@ def sync_with_server(collection_name: str = None):
 
         #Finds all tabsdata functions in current python file
         functions_in_file = [name for name, obj in inspect.getmembers(caller_mod, callable) if getattr(obj, "__module__", None) in ['tabsdata._tabsdatafunction']] 
-        print(functions_in_file)
+        #print(functions_in_file)
         
         #extract file name and file path for registration/update
         full_path = os.path.abspath(fr.filename)
