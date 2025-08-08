@@ -1,14 +1,8 @@
 # td-sync
 
-A tiny helper that **registers/updates your Tabsdata functions** without boilerplate.
+A tiny helper that **registers/updates your Tabsdata functions** when you run your tabsdata .py function file
 
-Drop `sync_with_server()` into any publisher/transformer file, call it once, and it will:
-
-- Connect to your Tabsdata server
-- List existing collections (pick by number) or create a new one
-- Detect the Tabsdata-decorated function in the **calling file** (prefers a function named after the file; otherwise prompts)
-- Build the proper `--path` (`/abs/path/to/your_file.py::your_func`)
-- **Register** or **update** the function
+Drop `sync_with_server()` into any tabsdata function file. Every time your file runs, the function is registered or updated
 
 ---
 
@@ -16,3 +10,20 @@ Drop `sync_with_server()` into any publisher/transformer file, call it once, and
 
 ```bash
 pip install git+https://github.com/adaydan-tabsdata/td-sync.git
+```
+---
+### How to use 
+
+### 1. Import Package into your file
+
+```bash
+from td_sync import sync_with_server
+```
+
+### 2. Call the Function within your file
+
+```bash
+sync_with_server()
+```
+
+
