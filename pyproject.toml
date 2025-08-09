@@ -1,6 +1,6 @@
 [project]
 name = "td-sync"
-version = "0.1.1"
+version = "0.1.2"
 description = "Register/update Tabsdata functions from any file"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -11,4 +11,4 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project.scripts]
-td-sync = "td_sync.sync:main"  # optional CLI
+td-cancel-flows = "td_sync.cancel_flows:cancel_flows"
