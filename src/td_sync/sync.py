@@ -6,7 +6,7 @@ import sys
 import re
 
 
-def sync_with_server(collection_name: str = None):
+def main(collection_name: str = None):
     call_stack = inspect.stack()
     if 'tabsdata/api/tabsdata_server.py' not in str(call_stack):
         #Establish Connection to Server
