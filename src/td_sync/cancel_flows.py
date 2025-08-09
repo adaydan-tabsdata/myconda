@@ -13,5 +13,9 @@ def main():
     stalled_transactions = [i for i in transactions if i.status == 'Stalled']
     if len(stalled_transactions) > 0:
         canceled_transactions = [i.cancel() for i in stalled_transactions]
+        print(f'Canceled {len(canceled_transactions)} stalled transactions')
         return canceled_transactions
-    return 'No Stalled Transactions Found'
+    print('No stalled transactions found')
+    return []
+
+
