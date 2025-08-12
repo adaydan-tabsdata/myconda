@@ -1,15 +1,22 @@
-[project]
-name = "td-sync"
-version = "0.1.5"
-description = "Register/update Tabsdata functions from any file"
-readme = "README.md"
-requires-python = ">=3.9"
-dependencies = ["tabsdata"]  # or the exact package name you use
-
 [build-system]
 requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "td-sync"
+version = "0.1.7"                # bump
+description = "Register/update Tabsdata functions from any file"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["tabsdata"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["td_sync*"]
+
 [project.scripts]
 td-cancel-flows = "td_sync.cancel_flows:main"
-td-trigger = "td_sync.trigger:main"
+td-trigger      = "td_sync.trigger:main"

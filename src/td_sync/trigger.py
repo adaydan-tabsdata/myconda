@@ -8,7 +8,7 @@ import datetime
 import os
 from time import sleep
 from typing import Tuple
-from cancel_flows import main as cancel_trx
+from .cancel_flows import main as cancel_trx
 
 import rich_click as click
 from rich.console import Console
