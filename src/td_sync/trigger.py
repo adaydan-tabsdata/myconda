@@ -87,6 +87,7 @@ def monitor_execution_or_transaction(transaction):
         if fn_run.status not in EXECUTION_FINAL_STATUSES
     ]
     if failed_runs:
+        initial_failed_run = [fn_run for fn_run in list_of_runs if fn_run.status == 'Failed'][0]
         click.echo("Some function runs failed:")
         for fn_run in failed_runs:
             click.echo(f"- {fn_run.id}")
@@ -94,6 +95,15 @@ def monitor_execution_or_transaction(transaction):
             f"'td exe logs --trx {transaction.id}'"
         )
         cancel_trx()
+        worker_id = server.list_workers(f"function_run_id:eq:{initial_failed_run.id}")[0]
+        log = server.get_worker_log(worker_id)
+        match = re.search(r"\[Exiting function execution\](.*?)={10,}", log, re.S)
+        if match:
+            result = match.group(1)  # text between xyz and 123
+            print(result)
+        else:
+            print(log)
+
     else:
         click.echo("All function runs were successful.")
 
