@@ -91,7 +91,7 @@ def monitor_execution_or_transaction(transaction):
         for fn_run in failed_runs:
             click.echo(f"- {fn_run.id}")
         complete_command = (
-            f"'td exe logs --plan {function.id}'"
+            f"'td exe logs --trx {transaction.id}'"
         )
         cancel_trx()
     else:
