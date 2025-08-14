@@ -8,7 +8,7 @@ import datetime
 import os
 from time import sleep
 from typing import Tuple
-from .cancel_flows import main as cancel_trx
+from td_sync.cancel_flows import main as cancel_trx
 
 import rich_click as click
 from rich.console import Console
@@ -92,8 +92,6 @@ def monitor_execution_or_transaction(transaction):
             click.echo(f"- {fn_run.id}")
         complete_command = (
             f"'td exe logs --plan {function.id}'"
-            if function
-            else f"'td exe logs --trx {function.id}'"
         )
         cancel_trx()
     else:

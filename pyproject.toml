@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "td-sync"
-version = "0.1.8"                # bump
+version = "0.1.9"                # bump
 description = "Register/update Tabsdata functions from any file"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -18,5 +18,5 @@ where = ["src"]
 include = ["td_sync*"]
 
 [project.scripts]
-td-cancel-flows = "td_sync.cancel_flows:main"
+td-cancel = "td_sync.cancel_flows:main"
 td-trigger      = "td_sync.trigger:main"
