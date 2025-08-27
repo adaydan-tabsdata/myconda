@@ -4,9 +4,9 @@ from tabsdata.api.tabsdata_server import TabsdataServer
 import inspect
 import sys
 import re
+from td_sync.trigger import main as trigger_function
 
-
-def main(collection_name: str = None):
+def main(collection_name: str = None, trigger: bool = False):
     call_stack = inspect.stack()
     if 'tabsdata/api/tabsdata_server.py' not in str(call_stack):
         #Establish Connection to Server
@@ -89,5 +89,7 @@ def main(collection_name: str = None):
             server.register_function(collection_name = collection_name,function_path = function_path)
             print(f'Registered Function with the following parameters\n\nCollection: {collection_name}\nFunction Name: {function_name}')
 
+        if trigger == True:
+            trigger_function(collection_name=collection_name, function_name=function_name)
         print()
 
