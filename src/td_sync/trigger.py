@@ -167,7 +167,6 @@ def main(collection_name: str = None, function_name: str = None):
     #Define Flag for Validating Collection
     function_validated_flag = False
     initial_query = False
-    function_name = None
 
     while function_validated_flag == False:
         if function_name is None:
