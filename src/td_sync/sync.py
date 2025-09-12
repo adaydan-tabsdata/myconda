@@ -23,7 +23,7 @@ def main(collection_name: str = None, trigger_function_flag: bool = False):
         options_string = "\n".join(f"[{i}] {name}" for i, name in options_dict.items())
 
         #Define Pattern for valid collection name
-        pattern = re.compile(r"^(?=.*[A-Za-z])[A-Za-z0-9]{1,100}$")
+        pattern = re.compile(r"^(?=.*[A-Za-z])[A-Za-z0-9_]{1,100}$")
 
         #Define Flag for Validating Collection
         collection_validated_flag = False
