@@ -196,12 +196,17 @@ def main(collection_name: str = None, function_name: str = None):
         #Breaks While Loop
         else:
             function_validated_flag = True
+    print(function_name)
     trigger = server.trigger_function(
         collection_name=collection_name,
         function_name=function_name,)
     transaction_list = server.list_transactions()
+    execution_list = server.list_executions()
     transaction = [i for i in transaction_list if i.status not in ['Committed', 'Failed', 'Canceled', 'Stalled']][-1]
-    monitor_execution_or_transaction(transaction)
+    execution = [i for i in execution_list if i.status not in ['Committed', 'Failed', 'Canceled', 'Stalled']][-1]
+    monitor_execution_or_transaction(execution)
+
+
 
     
 
